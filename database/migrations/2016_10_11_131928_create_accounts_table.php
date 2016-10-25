@@ -16,6 +16,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->softDeletes();
             $table->integer('user_id')->unsigned();//links account to user with type as account holder
             $table->date('closed_at');
             $table->integer('account_type_id')->unsigned();

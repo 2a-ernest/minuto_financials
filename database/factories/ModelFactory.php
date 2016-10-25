@@ -11,13 +11,31 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class,function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'fname' => $faker->firstNameFemale,
+        'lname' => $faker->lastName,
+        'oname' => $faker->monthName().'_Name',
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'user_type_id' => '3',
     ];
 });
+
+$factory->define(App\UserType::class, function ($faker){
+  return [
+    'type'=> $faker->dayofWeek(),
+    'description' => $faker->sentence(3),
+  ];
+});
+
+$factory->define(App\AccountType::class,function($faker){
+    return [
+        'type' => $faker->monthName().'Type',
+        'description' => $faker->sentence(3),
+    ];
+});
+
