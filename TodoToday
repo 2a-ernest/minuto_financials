@@ -1,6 +1,11 @@
-make auth
-making independent seeds
-making controllers
+make auth = done
+make models and migrations = done
+making independent seeds = done
+create relationship = done
+
+
+making controllers 
+admin [employee crud, admin crud,account crud, account type crud,loan]
 adding model links for orm
 Views
 Controllers
