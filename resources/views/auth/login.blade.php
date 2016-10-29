@@ -1,4 +1,4 @@
-@extends('templates.login')
+@extends('layouts.login')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                 <div class="alert alert-error">Invalid username or password</div>
             </div>
             <div class="inputwrapper animate1 bounceIn">
-                <input type="text" name="email" id="email" placeholder="Enter any username or email"  value="{{ old('email') }}" required/>
+                <input type="email" name="email" id="email" placeholder="Enter any username or email"  value="{{ old('email') }}" required/>
             </div>
             <div class="inputwrapper animate2 bounceIn">
                 <input type="password" name="password" id="password" placeholder="Enter any password" required/>

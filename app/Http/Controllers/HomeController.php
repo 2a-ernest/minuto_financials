@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    {   
+        //return view based on user type
+        $user_type = sprintf('%s.index',Auth::user()->userType->type);
+        // return response()->json($user_typ);
+        return view($user_type);
     }
 }
