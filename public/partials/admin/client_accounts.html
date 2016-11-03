@@ -1,0 +1,31 @@
+
+<!-- show accounts belonging to a given client specified by angular route #/client/{id}/accounts -->
+
+<!-- row -->
+<div class="row">
+	<div class="col-md-12">
+		<button class="btn btn-primary pull-right">Add account</button>
+	</div>
+
+	<div class="col-md-12 responsive">
+		<table class="table table-striped table-hover">
+			<thead>
+				<th>No.</th>
+				<th>Acc ID</th>
+				<th>Credit Total</th>
+				<th>Debit Total</th>
+				<th>Balance</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="acc in client.accounts track by $index">
+					<td>{{$index +1}}</td>
+					<td>{{acc.id}}</td>
+					<!-- <td>{{acc.}}</td> -->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div ng-include="'partials/modals.html'"></div>
+</div>
+<!-- row end -->

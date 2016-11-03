@@ -47,7 +47,7 @@ minuto.factory('API_RESOURCE',['$resource',function($resource){
       })
       .state('client_accounts',{
         url:'/client/{id}/accounts',
-        templateUrl:'/partials/admin/client_accounts',
+        templateUrl:'/partials/admin/client_accounts.html',
         controller: 'adminClientAccCtrl'
       });
       // $locationProvider.html5Mode({enabled:true,requireBase:false});
@@ -180,6 +180,12 @@ minuto.controller('adminCtrl',function($scope,API_RESOURCE,$filter){
 minuto.controller('adminClientAccCtrl',function($scope,API_RESOURCE,$filter,$stateParams){
 
   function initClientAcc(){
-    API_RESOURCE.client.get($stateParams)
+    //fetch client info with all associated accounts by using client id supplied in angular $stateParam
+    API_RESOURCE.client.get({id:$stateParams.id},function(response){
+      $scope.client = response;
+      console.log('fetched values from laravel',$scope.client);
+    });
   }
-})
+
+  initClientAcc();
+});

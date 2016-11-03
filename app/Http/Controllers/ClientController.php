@@ -87,7 +87,7 @@ class ClientController extends Controller
     public function show($id)
     {
         //
-        return response()->json(User::with('accounts')->where('id',$id)->get());
+        return response()->json(User::with('accounts')->where('id',$id)->get()->first());
     }
 
     /**

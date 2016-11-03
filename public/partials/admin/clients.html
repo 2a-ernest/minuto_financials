@@ -5,7 +5,7 @@
 	<!-- add row -->
 
 	<div class="col-md-12">
-		<button class="btn btn-primary" ng-click='showClientAddModal()'>Add client</button>
+		<button class="btn btn-primary pull-right" ng-click='showClientAddModal()'>Add client</button>
 	</div>
 	<!-- end add rows -->
 
@@ -35,7 +35,7 @@
                             <button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a ng-click='updateClientModal(client)'>Update</a></li>
-                                <li><a href="#">Accounts</a></li>
+                                <li><a href="#/client/{{client.id}}/accounts">Accounts</a></li>
                                 <li><a ng-click='delete(client,"restore")'>Enable</a></li>
                                 <li><a ng-click='delete(client,"delete")'>Disable</a></li>
                                 <li class="divider"></li>

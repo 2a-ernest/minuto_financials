@@ -1,8 +1,11 @@
+//Work by Ernest
 make auth = done
 make models and migrations = done
 making independent seeds = done
 create relationship = done
 login layout, login blade = done
+partials/admin/clients = done
+partials/admin/client_accounts = not done
 
 making controllers
 admin [employee crud, admin crud,account crud, account type crud,loan]
@@ -14,6 +17,7 @@ Routing
 
 roles and actions that can be performed on them
 admin create users {emp,admin,clients}
-a
+
 
 ##Note project includes stange version of bootstrap, thus requiring inspection of original shamcey elements in browser in other to acqainted with new classes for shamcey css
+//End of work by Ernest
