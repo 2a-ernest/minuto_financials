@@ -29,5 +29,9 @@ class DatabaseSeeder extends Seeder
         foreach ($accTypes as $accType) {
         	factory(App\AccountType::class,1)->create(['type'=>$accType]);
         }
+
+        //create seed acounts or client
+        factory(App\Account::class,90)->create();
+        // factory(App\Account::class,1)->create(['user_id'=>App\User::where('email','client@minuto.com')->get()->first()->id);
     }
 }

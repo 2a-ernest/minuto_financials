@@ -39,3 +39,10 @@ $factory->define(App\AccountType::class,function($faker){
     ];
 });
 
+$factory->define(App\Account::class,function($faker){
+    return [
+        'user_id' => App\UserType::where('type','client')->get()->first()->users->random()->id,//must be supplied when instanciating
+        'account_type_id' => App\AccountType::all()->random()->id //must be supplied when instanciating
+    ];
+});
+
