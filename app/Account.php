@@ -24,4 +24,6 @@ class Account extends Model
     public function credit_transactions(){
     	return $this->hasMany('App\Transaction','credt_account_id');
     }
+
+    
 }

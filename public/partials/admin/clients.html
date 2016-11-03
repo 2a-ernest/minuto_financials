@@ -1,0 +1,55 @@
+<!-- show all clients in tabular form and  -->
+
+<!-- container -->
+<div class="row">
+	<!-- add row -->
+
+	<div class="col-md-12">
+		<button class="btn btn-primary" ng-click='showClientAddModal()'>Add client</button>
+	</div>
+	<!-- end add rows -->
+
+
+	<!-- display row for clients -->
+		<div class="responsive">
+			<table class="table table-striped table-hover">
+				<thead>
+					<th>No.</th>
+					<th>id</th>
+					<th>Last name</th>
+					<th>First name</th>
+					<th>Other name(s)</th>
+					<th>Email</th>
+					<th></th>
+				</thead>
+				<tbody>
+					<tr ng-repeat='client in clients track by $index'>
+						<td>{{$index +1}}</td>
+						<td>{{client.id}}</td>
+						<td>{{client.lname}}</td>
+						<td>{{client.fname}}</td>
+						<td>{{client.oname}}</td>
+						<td>{{client.email}}</td>
+						<td>
+							<div class="btn-group">
+                            <button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click='updateClientModal(client)'>Update</a></li>
+                                <li><a href="#">Accounts</a></li>
+                                <li><a ng-click='delete(client,"restore")'>Enable</a></li>
+                                <li><a ng-click='delete(client,"delete")'>Disable</a></li>
+                                <li class="divider"></li>
+                                <li><a href="" ng-click='delete(client,"forceDelete")'>Delete</a></li>
+                            </ul>
+                        </div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	<!-- endi display row or clients -->
+
+	<div ng-include='"partials/modals.html"'></div>
+
+</div>
+<!-- container end -->

@@ -23,3 +23,5 @@ Route::get('/shamcey',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('client','ClientController');

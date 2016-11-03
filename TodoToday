@@ -10,3 +10,10 @@ adding model links for orm
 Views
 Controllers
 Routing
+
+
+roles and actions that can be performed on them
+admin create users {emp,admin,clients}
+a
+
+##Note project includes stange version of bootstrap, thus requiring inspection of original shamcey elements in browser in other to acqainted with new classes for shamcey css

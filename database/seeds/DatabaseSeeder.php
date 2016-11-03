@@ -19,9 +19,10 @@ class DatabaseSeeder extends Seeder
         factory(App\UserType::class,1)->create(['type'=>'client','description'=>'responsible for managing and setting configuration of system']);
         // factory(App\UserType::class,1)->create(['type'=>'admin','description'=>'responsible for managing and setting configuration of system']);
         //make one admin
-        factory(App\User::class,1)->create(['fname'=>'Ernest','lname'=>'Asare-Asiedu','email'=>'asieduernest@minuto.com','user_type_id'=>'1']);
-        factory(App\User::class,1)->create(['fname'=>'employee','lname'=>'','email'=>'employee@minuto.com','user_type_id'=>'2']);
-        factory(App\User::class,1)->create(['fname'=>'employee','lname'=>'','email'=>'client@minuto.com','user_type_id'=>'3']);
+        factory(App\User::class,1)->create(['email'=>'admin@minuto.com','user_type_id'=>'1']);
+        factory(App\User::class,1)->create(['email'=>'employee@minuto.com','user_type_id'=>'2']);
+        factory(App\User::class,1)->create(['email'=>'client@minuto.com','user_type_id'=>'3']);
+        factory(App\User::class,20)->create(['user_type_id'=>'3']);
 
         //make account type
        	$accTypes = ['banking_acc','loan_acc','susu_acc','asset_acc','metals_acc'];
