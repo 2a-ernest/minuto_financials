@@ -76,7 +76,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
-            'sslmode' => 'pgsql',
+            'sslmode' => 'prefer',
             // 'host' => env('DB_HOST', 'localhost'),
             // 'port' => env('DB_PORT', '5432'),
             // 'database' => env('DB_DATABASE', 'forge'),
