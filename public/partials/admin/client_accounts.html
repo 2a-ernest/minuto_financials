@@ -12,6 +12,9 @@
 			<thead>
 				<th>No.</th>
 				<th>Acc ID</th>
+				<th>
+					Account Type
+				</th>
 				<th>Credit Total</th>
 				<th>Debit Total</th>
 				<th>Balance</th>
@@ -20,6 +23,9 @@
 				<tr ng-repeat="acc in client.accounts track by $index">
 					<td>{{$index +1}}</td>
 					<td>{{acc.id}}</td>
+					<td>
+						{{acc.type.type}}
+					</td>
 					<!-- <td>{{acc.}}</td> -->
 				</tr>
 			</tbody>

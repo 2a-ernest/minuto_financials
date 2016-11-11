@@ -13,6 +13,6 @@ class AccountType extends Model
     protected $dates = ['deleted_at'];
 
     public function accounts(){
-    	return $this->hasMany('App\Account');
+    	return $this->hasMany('App\Account','account_type_id');
     }
 }

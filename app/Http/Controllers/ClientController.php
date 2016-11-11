@@ -50,14 +50,14 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
-        
+
          //use request->only([keys],)
         $arr = $request->only('lname','fname','oname','email');
-        $password= substr(bcrypt(sprintf('min%suto',rand())), 9,9); //limit bcrypt of rand to 9 
-       
-        
+        $password= substr(bcrypt(sprintf('min%suto',rand())), 9,9); //limit bcrypt of rand to 9
+
+
         $arr['user_type_id'] = $this->get_client_type_id();//set user type
-        
+
         $user = User::create($arr);//create new client user
 
         //set password
@@ -87,7 +87,7 @@ class ClientController extends Controller
     public function show($id)
     {
         //
-        return response()->json(User::with('accounts')->where('id',$id)->get()->first());
+        return response()->json(User::with('accounts.type')->where('id',$id)->get()->first());
     }
 
     /**

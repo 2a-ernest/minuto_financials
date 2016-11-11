@@ -25,5 +25,9 @@ class Account extends Model
     	return $this->hasMany('App\Transaction','credt_account_id');
     }
 
+    public function type(){
+      return $this->belongsTo('App\AccountType','account_type_id');
+    }
+
 
 }
