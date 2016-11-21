@@ -21,3 +21,35 @@ admin create users {emp,admin,clients}
 
 ##Note project includes stange version of bootstrap, thus requiring inspection of original shamcey elements in browser in other to acqainted with new classes for shamcey css
 //End of work by Ernest
+
+Task for Nana Osei
+Create models for ['banking_acc','loan_acc','susu_acc','asset_acc','metals_acc'] for their debit and credit
+
+eg php artisan make:model BackingAccDebitTransaction
+eg php artisan make:model BackingAccCreditTransaction
+
+
+Task for  Sarah
+
+add special code below to all Created by Nana for DebitTransactions and CreditTransactions
+
+-------------------
+/**
+    * The "booting" method of the model.
+    *
+    * @return void
+    */
+   protected static function boot()
+   {
+       parent::boot();
+
+       static::addGlobalScope('scope', function(Builder $builder) {
+           $builder->where('param', '>', 'value');
+       });
+   }
+-------------------
+
+Task for Last guy
+Create model with name "AccountHolder"
+
+php artisan make:model AccountHolder
