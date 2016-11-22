@@ -25,4 +25,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('client','ClientController');
+
 Route::resource('account','AccountController');
+
+
+Route::get('/we-want-demo/{data}','DemoController@index');
