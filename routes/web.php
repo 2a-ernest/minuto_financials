@@ -26,3 +26,4 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('client','ClientController');
 Route::resource('account','AccountController');
+Route::resource('transaction','TransactionController');

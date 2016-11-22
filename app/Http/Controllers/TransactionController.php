@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Account;
+use App\Transaction;
 
-class AccountController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class AccountController extends Controller
     public function index()
     {
         //
-        return response()->json(Account::with('account_type','account_holder')->get());
+
+        return response()->json(Transaction::with('TransactionType')->get());
     }
 
     /**
