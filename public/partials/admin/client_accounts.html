@@ -15,9 +15,10 @@
 				<th>
 					Account Type
 				</th>
-				<th>Credit Total</th>
 				<th>Debit Total</th>
+				<th>Credit Total</th>
 				<th>Balance</th>
+				<th>Action</th>
 			</thead>
 			<tbody>
 				<tr ng-repeat="acc in client.accounts track by $index">
@@ -26,7 +27,22 @@
 					<td>
 						{{acc.type.type | uppercase}}
 					</td>
-					<!-- <td>{{acc.}}</td> -->
+					<td>{{acc.debit_balance}}</td>
+					<td>{{acc.credit_balance}}</td>
+					<td>{{acc.balance}}</td>
+					<td>
+						<div class="btn-group">
+								<button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+										<li><a ng-click='updateClientModal(client)'>Update</a></li>
+										<li><a href="#/account/{{acc.id}}/transactions">Transactions</a></li>
+										<li><a ng-click='delete(acc,"restore")'>Enable</a></li>
+										<li><a ng-click='delete(acc,"delete")'>Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="" ng-click='delete(acc,"forceDelete")'>Delete</a></li>
+								</ul>
+						</div>
+					</td>
 				</tr>
 			</tbody>
 		</table>

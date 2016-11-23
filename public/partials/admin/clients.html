@@ -20,7 +20,7 @@
 					<th>First name</th>
 					<th>Other name(s)</th>
 					<th>Email</th>
-					<th></th>
+					<th>Action</th>
 				</thead>
 				<tbody>
 					<tr ng-repeat='client in clients track by $index'>
@@ -32,16 +32,16 @@
 						<td>{{client.email}}</td>
 						<td>
 							<div class="btn-group">
-                            <button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a ng-click='updateClientModal(client)'>Update</a></li>
-                                <li><a href="#/client/{{client.id}}/accounts">Accounts</a></li>
-                                <li><a ng-click='delete(client,"restore")'>Enable</a></li>
-                                <li><a ng-click='delete(client,"delete")'>Disable</a></li>
-                                <li class="divider"></li>
-                                <li><a href="" ng-click='delete(client,"forceDelete")'>Delete</a></li>
-                            </ul>
-                        </div>
+	                <button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
+	                <ul class="dropdown-menu">
+	                    <li><a ng-click='updateClientModal(client)'>Update</a></li>
+	                    <li><a href="#/client/{{client.id}}/accounts">Accounts</a></li>
+	                    <li><a ng-click='delete(client,"restore")'>Enable</a></li>
+	                    <li><a ng-click='delete(client,"delete")'>Disable</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="" ng-click='delete(client,"forceDelete")'>Delete</a></li>
+	                </ul>
+	            </div>
 						</td>
 					</tr>
 				</tbody>

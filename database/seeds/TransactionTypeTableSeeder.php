@@ -13,9 +13,12 @@ class TransactionTypeTableSeeder extends Seeder
     {
         //
 
-        factory(App\TransactionType::class,1)->create(['type' => 'backing__acc_transfer' ]);
-        factory(App\TransactionType::class,1)->create(['type' => 'metals_acc_transfer' ]);
-        factory(App\TransactionType::class,1)->create(['type' => 'asset_acc_transfer' ]);
+        factory(App\TransactionType::class,1)->create(['type' => 'banking_acc_transfer' ]);
+        factory(App\TransactionType::class,1)->create(['type' => 'banking_acc_withdrawal' ]);
+        factory(App\TransactionType::class,1)->create(['type' => 'banking_acc_deposit' ]);
+        factory(App\TransactionType::class,1)->create(['type' => 'banking_acc_charge' ]);
+        // factory(App\TransactionType::class,1)->create(['type' => 'metals_acc_transfer' ]);
+        // factory(App\TransactionType::class,1)->create(['type' => 'asset_acc_transfer' ]);
         // factory(App\TransactionType::class,1)->create(['type' => 'backing__acc_transfer' ]);
         // factory(App\TransactionType::class,1)->create(['type' => 'backing__acc_transfer' ]);
         // factory(App\TransactionType::class,1)->create(['type' => 'backing__acc_transfer' ]);

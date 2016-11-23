@@ -24,6 +24,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('client','ClientController');
-Route::resource('account','AccountController');
-Route::resource('transaction','TransactionController');
+
+Route::group(['middleware'=>'auth'],function(){
+  Route::resource('client','ClientController');
+  Route::resource('account','AccountController');
+  Route::resource('transaction','TransactionController');
+  Route::resource('banking_acc','BankingAccController');
+});
+
+
+Route::get('/we-want-demo/{data}','DemoController@index');

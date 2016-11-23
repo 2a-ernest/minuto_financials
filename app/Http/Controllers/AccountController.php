@@ -15,7 +15,15 @@ class AccountController extends Controller
     public function index()
     {
         //
-        return response()->json(Account::with('account_type','account_holder')->get());
+        $accounts = Account::with('account_type','account_holder')->get();
+
+        //ffind debit,credit and balance for all accounts
+        foreach ($accounts as $account) {
+          $account->debit_balance = $account->debit_balance();
+          $account->credit_balance = $account->credit_balance();
+          $account->balance = $account->balance();
+        }
+        return response()->json($accounts);
     }
 
     /**
@@ -48,6 +56,13 @@ class AccountController extends Controller
     public function show($id)
     {
         //
+        $account = Account::with('type','debit_transactions.transaction_type','credit_transactions.transaction_type')->find($id);
+        $account->debit_balance = $account->debit_balance();
+        $account->credit_balance = $account->credit_balance();
+        $account->balance = $account->balance();
+
+
+        return response()->json($account);
     }
 
     /**
@@ -79,8 +94,18 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         //
+
+        $options = ['1'=>'delete','2'=>'restore','3'=>'forceDelete'];
+        $client = Account::find($id);
+        //check that input contains delete_option_code
+        if($request->has('delete_option_code')){
+            //perform action acordingly
+            // $delete_option = ;
+            $client->$options[$request->input('delete_option_code')]();
+        }
+        return response()->json($client);
     }
 }

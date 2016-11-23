@@ -1,0 +1,74 @@
+
+<!-- show accounts belonging to a given client specified by angular route #/client/{id}/accounts -->
+
+<!-- row -->
+<div class="row">
+	<div class="col-md-12">
+		<button class="btn btn-primary pull-right">Add Transaction</button>
+	</div>
+
+	<div class="col-md-4 col-md-6">
+		<form class="form-horizontal"  method="post">
+			<div class="form-group">
+				<label for="" class="col-md-4">Debit Total GHC</label>
+				<div class="col-md-8">
+					<input type="text" name=""  ng-model='account.debit_balance' class="form-control form-input input" readonly="">
+				</div>
+			</div>
+			<div class="form-group">
+					<label for="" class="col-md-4">Credit Total GHC</label>
+					<div class="col-md-8">
+						<input type="text" name=""  ng-model='account.credit_balance' class="form-control form-input input" readonly="">
+					</div>
+			</div>
+			<div class="form-group">
+					<label for="" class="col-md-4">Total GHC</label>
+					<div class="col-md-8">
+						<input type="text" name=""  ng-model='account.balance' class="form-control form-input input" readonly="">
+					</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-12 responsive">
+		<table class="table table-striped table-hover">
+			<thead>
+				<th>No</th>
+				<th>Transaction ID</th>
+				<th>Credit Acc.</th>
+				<th>Debit Acc.</th>
+				<th>Amount</th>
+				<th>Transacion Type</th>
+				<th>Data</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tran in account.transactions track by $index">
+					<td>{{No}}</td>
+					<td>{{tran.id}}</td>
+					<td>{{tran.credit_account_id}} {{tran.acc}}</td>
+					<td>{{tran.debit_account_id}}</td>
+					<td>{{tran.amount}}</td>
+					<td>{{tran.transaction_type.type | uppercase}}</td>
+					<td>{{tran.created_at}}</td>
+
+					<td>
+						<div class="btn-group">
+								<button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+										<!-- <li><a ng-click='updateClientModal(client)'>Update</a></li>
+										<li><a href="#/account/{{acc.id}}/transactions">Transactions</a></li>
+										<li><a ng-click='delete(acc,"restore")'>Enable</a></li>
+										<li><a ng-click='delete(acc,"delete")'>Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="" ng-click='delete(acc,"forceDelete")'>Delete</a></li> -->
+								</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div ng-include="'partials/modals.html'"></div>
+</div>
+<!-- row end -->

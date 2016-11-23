@@ -53,7 +53,7 @@ $factory->define(App\Transaction::class,function($faker){
         // 'account_type_id' => App\AccountType::all()->random()->id //must be supplied when instanciating
         'transaction_type_id' => App\TransactionType::all()->random()->id,
         'debit_account_id' => function(array $transaction){
-          App\TransactionType::find($transaction['transaction_type_id')->accounts->random()->id,
+          return App\TransactionType::find($transaction['transaction_type_id'])->accounts->random()->id;
         },
         'credit_account_id' => App\AccountType::where('type','banking_acc')->get()->first()->accounts->random()->id,
         'amount' => $faker->randomFloat(2,30,2000),

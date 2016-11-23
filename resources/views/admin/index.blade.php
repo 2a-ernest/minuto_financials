@@ -111,8 +111,8 @@
             <ul class="nav nav-tabs nav-stacked">
             	<li class="nav-header">Navigation</li>
                 <li><a ui-sref='clients'><span class="iconfa-laptop"></span> Clients</a></li>
-                <li><a href="#accounts"><span class="iconfa-hand-up"></span> Accounts</a></li>
-                <li class="dropdown"><a href=""><span class="iconfa-pencil"></span> Forms</a>
+                <!-- <li><a href="#accounts"><span class="iconfa-hand-up"></span> Accounts</a></li> -->
+                <!-- <li class="dropdown"><a href=""><span class="iconfa-pencil"></span> Forms</a>
                 	<ul>
                     	<li><a href="forms.html">Form Styles</a></li>
                         <li><a href="wizards.html">Wizard Form</a></li>
@@ -144,7 +144,7 @@
                         <li class="active"><a href="editprofile.html">Edit Profile</a></li>
                         <li><a href="invoice.html">Invoice Page</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div><!--leftmenu-->
 
@@ -185,8 +185,8 @@
             <div class="maincontentinner">
                 <div class="container">
                     <!-- code for view of angular ui-routes are inserter here -->
-                    <div ui-view></div>   
-                 
+                    <div ui-view></div>
+
                 </div><!--row-fluid-->
 
                 <div class="footer">

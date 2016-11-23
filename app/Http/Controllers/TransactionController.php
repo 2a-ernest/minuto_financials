@@ -16,7 +16,7 @@ class TransactionController extends Controller
     {
         //
 
-        return response()->json(Transaction::with('TransactionType')->get());
+        return response()->json(Transaction::with('transaction_type','debit_account','credit_account')->get());
     }
 
     /**
