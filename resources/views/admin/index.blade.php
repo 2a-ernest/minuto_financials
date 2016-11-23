@@ -10,16 +10,16 @@
     <div class="headerinner">
         <ul class="headmenu">
             <li class="odd">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="count">4</span>
                     <span class="head-icon head-message"></span>
                     <span class="headmenu-label">Messages</span>
-                </a>
-                <ul class="dropdown-menu">
+                </a> -->
+                <!-- <ul class="dropdown-menu">
                     <li class="nav-header">Messages</li>
                     <li><a href=""><span class="icon-envelope"></span> New message from <strong>Lee</strong> <small class="muted"> - 1 week ago</small></a></li>
                     <li class="viewmore"><a href="messages.html">View More Messages</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" data-target="#">
@@ -38,8 +38,8 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="images/photos/thumb2.png" alt="" class="userthumb" />
-                            <strong>Shamcey Sindilmaca</strong>
+                            <!-- <img src="images/photos/thumb2.png" alt="" class="userthumb" /> -->
+                            <strong>Minuto Financials </strong>
                             <small>April 19, 2013</small>
                         </a>
                     </li>
@@ -66,7 +66,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="odd">
+            <!-- <li class="odd">
                 <a class="dropdown-toggle" data-toggle="dropdown" data-target="#">
                 <span class="count">1</span>
                 <span class="head-icon head-bar"></span>
@@ -77,7 +77,7 @@
                     <li><a href=""><span class="icon-align-left"></span> Most Viewed in <strong>Blog</strong> <small class="muted"> - 1 week ago</small></a></li>
                     <li class="viewmore"><a href="charts.html">View More Statistics</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li class="right">
                 <div class="userloggedinfo">
                     <img src="images/photos/thumb1.png" alt="" />
